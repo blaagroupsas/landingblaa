@@ -1,0 +1,192 @@
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold">Transforma el aprendizaje en tu organización</h1>
+                <p class="lead my-4">Soluciones de e-learning innovadoras que impulsan el conocimiento y mejoran las
+                    competencias en entornos digitales.</p>
+                <button class="btn btn-primary btn-lg" (click)="scrollToContact()">Solicitar información</button>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-image-container">
+                    <!-- <div class="hero-placeholder"></div> -->
+                    <img src="images/e-learning.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solutions Section -->
+<section class="solutions-section py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Nuestras Soluciones</h2>
+                <p class="section-subtitle">Formación digital adaptada a los retos actuales del aprendizaje.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4" *ngFor="let solution of solutions">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i [class]="solution.icon"></i>
+                    </div>
+                    <h3 class="solution-title">{{solution.title}}</h3>
+                    <p class="solution-description">{{solution.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits-section py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Beneficios Clave</h2>
+                <p class="section-subtitle">Por qué elegir nuestras soluciones de e-learning para tu empresa.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4" *ngFor="let benefit of benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i [class]="benefit.icon"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">{{benefit.title}}</h3>
+                        <p class="benefit-description">{{benefit.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Example Section -->
+<section class="example-section py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Una Nueva Experiencia de Aprendizaje</h2>
+                <p class="section-subtitle">Explora cómo trabajamos para transformar la formación digital.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="example-content">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Interfaz intuitiva</h4>
+                            <p>Diseñada para facilitar la navegación y mejorar la experiencia de usuario.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Seguimiento detallado</h4>
+                            <p>Métricas y análisis para monitorizar el progreso de los estudiantes.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Contenido interactivo</h4>
+                            <p>Elementos que fomentan la participación activa y el aprendizaje efectivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="example-image">
+                    <!-- <div class="example-placeholder"></div> -->
+                    <img src="images/e-learning2.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact-section" class="contact-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <h2 class="section-title text-start">Impulsa la formación en tu organización</h2>
+                <p class="mb-4">Cuéntanos tus necesidades y objetivos de formación. Nuestro equipo de expertos te
+                    ayudará a diseñar la solución ideal para tu empresa.</p>
+                <div class="contact-info">
+                    <p><i class="bi bi-envelope"></i> formacion&#64;tuempresa.com</p>
+                    <p><i class="bi bi-telephone"></i> +34 123 456 789</p>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="contact-form-container">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" formControlName="name" placeholder="Nombre"
+                                    [ngClass]="{'is-invalid': isSubmitted && contactForm.controls['name'].errors}">
+                                <div class="invalid-feedback"
+                                    *ngIf="isSubmitted && contactForm.controls['name'].errors?.['required']">
+                                    Por favor, introduce tu nombre.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" formControlName="email" placeholder="Email"
+                                    [ngClass]="{'is-invalid': isSubmitted && contactForm.controls['email'].errors}">
+                                <div class="invalid-feedback"
+                                    *ngIf="isSubmitted && contactForm.controls['email'].errors?.['required']">
+                                    Por favor, introduce tu email.
+                                </div>
+                                <div class="invalid-feedback"
+                                    *ngIf="isSubmitted && contactForm.controls['email'].errors?.['email']">
+                                    Por favor, introduce un email válido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="company" placeholder="Empresa"
+                                [ngClass]="{'is-invalid': isSubmitted && contactForm.controls['company'].errors}">
+                            <div class="invalid-feedback"
+                                *ngIf="isSubmitted && contactForm.controls['company'].errors?.['required']">
+                                Por favor, introduce el nombre de tu empresa.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" formControlName="message"
+                                placeholder="Describe tus necesidades de formación"
+                                [ngClass]="{'is-invalid': isSubmitted && contactForm.controls['message'].errors}"></textarea>
+                            <div class="invalid-feedback"
+                                *ngIf="isSubmitted && contactForm.controls['message'].errors?.['required']">
+                                Por favor, cuéntanos tus necesidades de formación.
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Solicitar información</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,226 @@
+// Importar variables
+@import "../../../styles/variables";
+
+// Estilos generales
+body {
+  font-family: $font-family-base;
+  color: $gray-900;
+}
+
+section {
+  padding: $section-padding-y $section-padding-x;
+}
+
+.section-title {
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacer-3;
+}
+
+.section-description {
+  color: $gray-600;
+  font-size: $font-size-base * 1.1;
+}
+
+// Hero Section
+.hero-section {
+  background-color: $white;
+
+  h1 {
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+  }
+
+  .lead {
+    color: $gray-600;
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+
+  .btn-outline-dark {
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $gray-900;
+      color: $white;
+    }
+  }
+
+  .placeholder-image {
+    min-height: 350px;
+  }
+}
+
+// Servicios Section
+.servicios-section {
+  background-color: $gray-100;
+
+  .card {
+    transition: $transition-base;
+    background-color: $white;
+    border-radius: $card-border-radius;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow !important;
+    }
+  }
+
+  .icon-wrapper {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-weight: $font-weight-bold;
+  }
+
+  .card-text {
+    color: $gray-600;
+  }
+}
+
+// Tecnologías Section
+.tecnologias-section {
+  background-color: $white;
+
+  .tech-item {
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    i {
+      color: $primary-color;
+    }
+
+    .tech-name {
+      color: $gray-700;
+    }
+  }
+}
+
+// Casos de Éxito Section
+.casos-exito-section {
+  background-color: $gray-100;
+
+  .card {
+    overflow: hidden;
+    transition: $transition-base;
+
+    &:hover {
+      box-shadow: $shadow !important;
+    }
+  }
+
+  .placeholder-image {
+    min-height: 200px;
+  }
+
+  .card-title {
+    font-weight: $font-weight-bold;
+  }
+
+  .card-text {
+    color: $gray-600;
+  }
+
+  .btn-outline-primary {
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+// Contacto Section
+.contacto-section {
+  background-color: $white;
+
+  .card {
+    border-radius: $card-border-radius;
+  }
+
+  .form-label {
+    color: $gray-700;
+    font-weight: $font-weight-bold;
+  }
+
+  .form-control {
+    border-color: $gray-300;
+    padding: $form-control-padding-y $form-control-padding-x;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+    }
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+
+    &:disabled {
+      background-color: lighten($primary-color, 20%);
+      border-color: lighten($primary-color, 20%);
+    }
+  }
+}
+
+// Footer
+.footer-section {
+  background-color: $gray-900;
+  color: $white;
+
+  .social-links {
+    a {
+      transition: $transition-fast;
+
+      &:hover {
+        color: $primary-color !important;
+      }
+    }
+  }
+}
+
+// Media Queries para Responsive
+@media (max-width: $breakpoint-md) {
+  .hero-section {
+    text-align: center;
+
+    .d-flex {
+      justify-content: center;
+    }
+  }
+
+  .section-padding-y {
+    padding-top: $section-padding-y * 0.7;
+    padding-bottom: $section-padding-y * 0.7;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+}

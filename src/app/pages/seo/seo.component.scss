@@ -1,0 +1,276 @@
+// Importar variables
+@import "../../../styles/variables";
+
+// Estilos generales
+body {
+  font-family: $font-family-base;
+  color: $gray-900;
+}
+
+section {
+  padding: $section-padding-y $section-padding-x;
+}
+
+.section-title {
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacer-3;
+}
+
+.section-description {
+  color: $gray-600;
+  font-size: $font-size-base * 1.1;
+}
+
+// Hero Section
+.hero-section {
+  background-color: $white;
+
+  h1 {
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+  }
+
+  .lead {
+    color: $gray-600;
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    transition: $transition-base;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+
+  .btn-outline-dark {
+    transition: $transition-base;
+
+    &:hover {
+      background-color: $gray-900;
+      color: $white;
+    }
+  }
+
+  .placeholder-image {
+    min-height: 350px;
+  }
+}
+
+// Servicios Section
+.servicios-section {
+  background-color: $gray-100;
+
+  .card {
+    transition: $transition-base;
+    background-color: $white;
+    border-radius: $card-border-radius;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow !important;
+    }
+  }
+
+  .icon-wrapper {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-title {
+    font-weight: $font-weight-bold;
+  }
+
+  .card-text {
+    color: $gray-600;
+  }
+}
+
+// Métricas Section
+.metricas-section {
+  background-color: $white;
+
+  .metrica-card {
+    background-color: $white;
+    border-radius: $card-border-radius;
+    transition: $transition-base;
+    box-shadow: $shadow-sm;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow;
+    }
+  }
+
+  .metrica-valor {
+    color: $primary-color;
+    font-weight: $font-weight-bold;
+  }
+
+  .metrica-titulo {
+    font-weight: $font-weight-bold;
+  }
+
+  .metrica-descripcion {
+    color: $gray-600;
+    font-size: $font-size-base * 0.9;
+  }
+}
+
+// Proceso Section
+.proceso-section {
+  background-color: $gray-100;
+
+  .proceso-timeline {
+    position: relative;
+    padding: $spacer-4 0;
+
+    @media (min-width: $breakpoint-lg) {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $gray-300;
+        z-index: 1;
+      }
+    }
+  }
+
+  .proceso-item {
+    position: relative;
+    background-color: $white;
+    padding: $spacer-4;
+    border-radius: $card-border-radius;
+    box-shadow: $shadow-sm;
+    margin: $spacer-2;
+    text-align: center;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow;
+    }
+  }
+
+  .proceso-numero {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: $primary-color;
+    color: $white;
+    font-size: $font-size-base * 1.5;
+    font-weight: $font-weight-bold;
+    border-radius: 50%;
+    margin: 0 auto $spacer-3;
+    position: relative;
+    z-index: 2;
+  }
+
+  .proceso-titulo {
+    font-weight: $font-weight-bold;
+  }
+
+  .proceso-descripcion {
+    color: $gray-600;
+  }
+}
+
+// Contacto Section
+.contacto-section {
+  background-color: $white;
+
+  .card {
+    border-radius: $card-border-radius;
+  }
+
+  .form-label {
+    color: $gray-700;
+    font-weight: $font-weight-bold;
+  }
+
+  .form-control {
+    border-color: $gray-300;
+    padding: $form-control-padding-y $form-control-padding-x;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+    }
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+
+    &:disabled {
+      background-color: lighten($primary-color, 20%);
+      border-color: lighten($primary-color, 20%);
+    }
+  }
+}
+
+// Footer
+.footer-section {
+  background-color: $gray-900;
+  color: $white;
+
+  .social-links {
+    a {
+      transition: $transition-fast;
+
+      &:hover {
+        color: $primary-color !important;
+      }
+    }
+  }
+}
+
+// Media Queries para Responsive
+@media (max-width: $breakpoint-md) {
+  .hero-section {
+    text-align: center;
+
+    .d-flex {
+      justify-content: center;
+    }
+  }
+
+  section {
+    padding-top: $section-padding-y * 0.6;
+    padding-bottom: $section-padding-y * 0.6;
+  }
+
+  .proceso-timeline {
+    &:before {
+      display: none;
+    }
+  }
+
+  .proceso-item {
+    margin-bottom: $spacer-3;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .proceso-timeline {
+    padding: 0;
+  }
+}

@@ -1,0 +1,23 @@
+<section class="differentials py-5" id="diferenciales">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">¿Por qué elegir Blaa Group?</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            @for (diff of differentials; track diff.id) {
+            <div class="col-md-4 mb-4">
+                <div class="differential-card text-center">
+                    <div class="differential-circle">
+                        <span class="differential-number">{{ diff.number }}</span>
+                    </div>
+                    <h3 class="differential-title mt-4">{{ diff.title }}</h3>
+                    <p class="differential-description">{{ diff.description }}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

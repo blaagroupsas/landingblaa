@@ -1,0 +1,32 @@
+<section class="testimonials py-5" id="testimonios">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            @for (testimonial of testimonials; track testimonial.id) {
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="testimonial-text">{{ testimonial.quote }}</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img [src]="testimonial.image" alt="{{ testimonial.name }}"
+                                class="img-fluid rounded-circle">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">{{ testimonial.name }}</h4>
+                            <p class="author-position">{{ testimonial.position }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

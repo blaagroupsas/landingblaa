@@ -1,0 +1,156 @@
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-7 py-5">
+                <h1 class="display-4 fw-bold mb-4">Impulsa tu Negocio con Estrategias de SEO</h1>
+                <p class="lead mb-4">Mejora tu visibilidad en buscadores, aumenta el tráfico orgánico y consigue más
+                    clientes con nuestras soluciones de posicionamiento web.</p>
+                <div class="d-flex gap-3">
+                    <a href="#contacto" class="btn btn-primary btn-lg">Análisis SEO Gratuito</a>
+                    <a href="#servicios" class="btn btn-outline-dark btn-lg">Nuestros Servicios</a>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-image text-center">
+                    <!-- Placeholder para imagen o ilustración -->
+                    <div
+                        class="placeholder-image bg-light rounded-3 p-5 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-search display-1 text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Servicios Section -->
+<section id="servicios" class="servicios-section bg-light">
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title mb-3">Servicios de SEO Profesional</h2>
+                <p class="section-description">Soluciones personalizadas para mejorar tu posicionamiento en buscadores
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3" *ngFor="let servicio of servicios">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper mb-4">
+                            <i class="{{servicio.icono}} text-primary display-5"></i>
+                        </div>
+                        <h3 class="card-title h5 mb-3">{{servicio.titulo}}</h3>
+                        <p class="card-text">{{servicio.descripcion}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Métricas Section -->
+<section class="metricas-section">
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title mb-3">Resultados que Marcan la Diferencia</h2>
+                <p class="section-description">Nuestras estrategias de SEO generan impacto real en tu negocio</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3" *ngFor="let metrica of metricas">
+                <div class="metrica-card text-center p-4">
+                    <div class="metrica-valor display-4 fw-bold text-primary mb-2">{{metrica.valor}}</div>
+                    <h3 class="metrica-titulo h5 mb-3">{{metrica.titulo}}</h3>
+                    <p class="metrica-descripcion">{{metrica.descripcion}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Proceso Section -->
+<section class="proceso-section bg-light">
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title mb-3">Nuestro Proceso de Trabajo</h2>
+                <p class="section-description">Metodología probada para lograr resultados sostenibles</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="proceso-timeline">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-3" *ngFor="let paso of proceso">
+                            <div class="proceso-item">
+                                <div class="proceso-numero">{{paso.paso}}</div>
+                                <h3 class="proceso-titulo h5 mb-3">{{paso.titulo}}</h3>
+                                <p class="proceso-descripcion">{{paso.descripcion}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA + Formulario de Contacto -->
+<section id="contacto" class="contacto-section">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-title mb-3">¿Listo para Mejorar tu Posicionamiento?</h2>
+                <p class="section-description mb-5">Completa el formulario y recibe un análisis SEO gratuito de tu sitio
+                    web</p>
+            </div>
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4 p-lg-5">
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" formControlName="nombre"
+                                    [ngClass]="{'is-invalid': contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched}">
+                                <div class="invalid-feedback"
+                                    *ngIf="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched">
+                                    Este campo es requerido.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" formControlName="email"
+                                    [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}">
+                                <div class="invalid-feedback"
+                                    *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                                    Por favor, introduce un email válido.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sitioWeb" class="form-label">URL de tu Sitio Web</label>
+                                <input type="url" class="form-control" id="sitioWeb" formControlName="sitioWeb"
+                                    [ngClass]="{'is-invalid': contactForm.get('sitioWeb')?.invalid && contactForm.get('sitioWeb')?.touched}">
+                                <div class="invalid-feedback"
+                                    *ngIf="contactForm.get('sitioWeb')?.invalid && contactForm.get('sitioWeb')?.touched">
+                                    Por favor, introduce la URL de tu sitio web.
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="mensaje" class="form-label">Mensaje (opcional)</label>
+                                <textarea class="form-control" id="mensaje" rows="3"
+                                    formControlName="mensaje"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg px-5"
+                                    [disabled]="contactForm.invalid">Solicitar Análisis</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

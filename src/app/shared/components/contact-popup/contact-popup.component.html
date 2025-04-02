@@ -1,0 +1,68 @@
+<div class="contact-popup-overlay" [class.show]="isVisible" (click)="closePopup($event)">
+    <div class="contact-popup-content">
+        <button class="close-button" (click)="close()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <h2 class="mb-4">Agenda una consulta gratuita</h2>
+
+        <div class="alert alert-success" *ngIf="success">
+            Mensaje enviado correctamente. ¡Nos pondremos en contacto contigo pronto!
+        </div>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" formControlName="name"
+                    [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                    <div *ngIf="f['name'].errors['required']">El nombre es obligatorio</div>
+                    <div *ngIf="f['name'].errors['minlength']">El nombre debe tener al menos 2 caracteres</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">El email es obligatorio</div>
+                    <div *ngIf="f['email'].errors['email']">El email no es válido</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Teléfono (opcional)</label>
+                <input type="tel" class="form-control" id="phone" formControlName="phone">
+            </div>
+
+            <div class="mb-3">
+                <label for="service" class="form-label">Servicio de interés</label>
+                <select class="form-select" id="service" formControlName="service"
+                    [ngClass]="{ 'is-invalid': submitted && f['service'].errors }">
+                    <option value="">Seleccionar servicio</option>
+                    <option value="redes-sociales">Gestión de Redes Sociales</option>
+                    <option value="desarrollo-web">Desarrollo Web</option>
+                    <option value="seo">SEO y Posicionamiento</option>
+                    <option value="branding">Branding y Diseño</option>
+                    <option value="elearning">E-learning y Formación Digital</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <div *ngIf="submitted && f['service'].errors" class="invalid-feedback">
+                    <div *ngIf="f['service'].errors['required']">Por favor selecciona un servicio</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="message" rows="4" formControlName="message"
+                    [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"></textarea>
+                <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+                    <div *ngIf="f['message'].errors['required']">El mensaje es obligatorio</div>
+                    <div *ngIf="f['message'].errors['minlength']">El mensaje debe tener al menos 10 caracteres</div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+    </div>
+</div>

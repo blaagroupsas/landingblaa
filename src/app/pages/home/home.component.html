@@ -1,0 +1,13 @@
+<!-- Página principal que ensambla todas las secciones -->
+<app-hero></app-hero>
+<app-about></app-about>
+<app-services></app-services>
+<app-portfolio></app-portfolio>
+<app-differentials></app-differentials>
+<app-testimonials></app-testimonials>
+<app-contact></app-contact>
+
+<!-- Botón de "Volver arriba" -->
+<button class="btn-scroll-top" (click)="scrollToSection('hero')" [ngClass]="{'visible': true}">
+    <i class="bi bi-arrow-up"></i>
+</button>

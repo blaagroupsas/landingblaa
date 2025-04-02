@@ -1,0 +1,28 @@
+<section class="portfolio py-5" id="portafolio">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Nuestros Clientes</h2>
+                <p class="section-subtitle">Empresas que confían en nosotros</p>
+            </div>
+        </div>
+
+        <div class="infinite-carousel-container">
+            <div class="infinite-carousel-track" [style.animation-duration]="animationDuration + 's'">
+                <!-- Primera copia de logos (para el loop infinito) -->
+                <div class="client-logo" *ngFor="let client of clients">
+                    <img [src]="client.logo || 'assets/images/placeholder-logo.svg'" [alt]="client.name"
+                        class="img-fluid">
+
+                </div>
+
+                <!-- Segunda copia de logos (para el loop infinito) -->
+                <div class="client-logo" *ngFor="let client of clients">
+                    <img [src]="client.logo || 'assets/images/placeholder-logo.svg'" [alt]="client.name"
+                        class="img-fluid">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

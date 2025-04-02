@@ -1,0 +1,147 @@
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold">Transformamos ideas en identidades memorables</h1>
+                <p class="lead my-4">Creamos soluciones de branding y diseño que conectan con tu audiencia y potencian
+                    el valor de tu marca.</p>
+                <button class="btn btn-primary btn-lg" (click)="scrollToContact()">Comienza tu proyecto</button>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-image-container">
+                    <!-- Placeholder for hero image -->
+                    <!-- <div class="hero-placeholder"></div> -->
+                    <img src="images/branding.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Desarrollamos soluciones creativas personalizadas para cada cliente.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4" *ngFor="let service of services">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i [class]="service.icon"></i>
+                    </div>
+                    <h3 class="service-title">{{service.title}}</h3>
+                    <p class="service-description">{{service.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="portfolio-section py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Nuestro Trabajo</h2>
+                <p class="section-subtitle">Proyectos seleccionados que reflejan nuestra pasión por el diseño.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let item of portfolioItems">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <!-- Use placeholder if images are not available -->
+                        <div class="portfolio-placeholder"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>{{item.title}}</h4>
+                        <p>{{item.client}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section py-5">
+    <div class="container">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Nuestro Proceso</h2>
+                <p class="section-subtitle">Un enfoque metódico para crear soluciones efectivas de marca.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4" *ngFor="let step of processSteps">
+                <div class="process-step">
+                    <div class="step-number">{{step.number}}</div>
+                    <h3 class="step-title">{{step.title}}</h3>
+                    <p class="step-description">{{step.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact-section" class="contact-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="section-title">¿Listo para comenzar?</h2>
+                <p class="mb-4">Cuéntanos sobre tu proyecto y cómo podemos ayudarte a alcanzar tus objetivos.</p>
+                <div class="contact-info">
+                    <p><i class="bi bi-envelope"></i> contacto&#64;tuempresa.com</p>
+                    <p><i class="bi bi-telephone"></i> +34 123 456 789</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-form-container">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="name" placeholder="Nombre"
+                                [ngClass]="{'is-invalid': isSubmitted && contactForm.controls['name'].errors}">
+                            <div class="invalid-feedback"
+                                *ngIf="isSubmitted && contactForm.controls['name'].errors?.['required']">
+                                Por favor, introduce tu nombre.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email"
+                                [ngClass]="{'is-invalid': isSubmitted && contactForm.controls['email'].errors}">
+                            <div class="invalid-feedback"
+                                *ngIf="isSubmitted && contactForm.controls['email'].errors?.['required']">
+                                Por favor, introduce tu email.
+                            </div>
+                            <div class="invalid-feedback"
+                                *ngIf="isSubmitted && contactForm.controls['email'].errors?.['email']">
+                                Por favor, introduce un email válido.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" formControlName="message" placeholder="Mensaje"
+                                [ngClass]="{'is-invalid': isSubmitted && contactForm.controls['message'].errors}"></textarea>
+                            <div class="invalid-feedback"
+                                *ngIf="isSubmitted && contactForm.controls['message'].errors?.['required']">
+                                Por favor, introduce tu mensaje.
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

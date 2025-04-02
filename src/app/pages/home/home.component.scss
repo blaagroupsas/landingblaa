@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+
+// Estilos específicos para la página de inicio
+.btn-scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  box-shadow: 0 4px 10px rgba($black, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-base;
+  z-index: 999;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    background-color: darken($primary-color, 10%);
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+// Estilos para espaciado entre secciones si es necesario
+:host ::ng-deep {
+  section {
+    scroll-margin-top: 80px; // Para compensar el header fijo al hacer scroll
+  }
+}

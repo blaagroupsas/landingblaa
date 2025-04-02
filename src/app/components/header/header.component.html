@@ -1,0 +1,61 @@
+<header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" routerLink="/">
+                <img src="images/logobn.png" class="img-fluid" width="150" alt="">
+            </a>
+
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" routerLink="/servicios/redes-sociales"
+                                    routerLinkActive="active">Gestión de Redes Sociales</a></li>
+                            <li><a class="dropdown-item" routerLink="/servicios/desarrollo-web"
+                                    routerLinkActive="active">Desarrollo Web</a></li>
+                            <li><a class="dropdown-item" routerLink="/servicios/seo" routerLinkActive="active">SEO y
+                                    Posicionamiento</a></li>
+                            <li><a class="dropdown-item" routerLink="/servicios/branding"
+                                    routerLinkActive="active">Branding y Diseño</a></li>
+                            <li><a class="dropdown-item" routerLink="/servicios/e-learning"
+                                    routerLinkActive="active">E-learning</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/portafolio" routerLinkActive="active">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button - Ahora abre el popup -->
+                <button class="btn btn-primary ms-lg-4 cta-button" (click)="openContactPopup()">
+                    Agendar consulta gratuita
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Popup de contacto -->
+    <app-contact-popup #contactPopup></app-contact-popup>
+</header>

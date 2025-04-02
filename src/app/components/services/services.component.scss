@@ -1,0 +1,49 @@
+@import "../../../styles/variables";
+
+.services {
+  background-color: $gray-100;
+}
+
+.service-card {
+  height: 100%;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 5px 15px rgba($black, 0.05);
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba($black, 0.1);
+
+    .service-icon {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-color: rgba($primary-color, 0.1);
+  color: $primary-color;
+  margin: 0 auto;
+  transition: $transition-base;
+
+  i {
+    line-height: 80px;
+  }
+}
+
+.service-title {
+  font-weight: $font-weight-bold;
+  color: $gray-900;
+}
+
+.service-description {
+  color: $gray-600;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,84 @@
+<footer class="footer">
+    <div class="footer-main py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Logo & About -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="images/logob.webp" class="img-fluid" width="150" alt="">
+                    </div>
+                    <p class="mt-3">Somos una agencia de marketing digital comprometida con el éxito de nuestros
+                        clientes a través de estrategias personalizadas y resultados medibles.</p>
+
+                    <div class="footer-social mt-3">
+                        @for (social of socialLinks; track social.icon) {
+                        <a [href]="social.link" class="social-icon">
+                            <i class="bi {{ social.icon }}"></i>
+                        </a>
+                        }
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Links rápidos</h5>
+                    <ul class="footer-links">
+                        @for (link of quickLinks; track link.label) {
+                        <li><a [href]="link.link">{{ link.label }}</a></li>
+                        }
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Servicios</h5>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Gestión de Redes Sociales</a></li>
+                        <li><a href="#servicios">Desarrollo Web</a></li>
+                        <li><a href="#servicios">SEO y Posicionamiento</a></li>
+                        <li><a href="#servicios">Branding y Diseño</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-lg-3">
+                    <h5 class="footer-heading">Contacto</h5>
+                    <ul class="footer-contact">
+                        <!-- <li>
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Av. Principal 123, Ciudad</span>
+                        </li> -->
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            <span>marketing&#64;blaagroup.com</span>
+                        </li>
+                        <!-- <li>
+                            <i class="bi bi-telephone"></i>
+                            <span>+1 (234) 567-8900</span>
+                        </li> -->
+                        <li>
+                            <i class="bi bi-whatsapp"></i>
+                            <span>+57 (301) 674-2814</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; {{ currentYear }} Blaa Group. Todos los derechos reservados.</p>
+                </div>
+                <!-- <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <ul class="footer-legal">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</footer>
