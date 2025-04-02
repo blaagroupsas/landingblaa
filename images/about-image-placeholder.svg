@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="background-color:#f5f5f5">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#e0e0e0" />
+  
+  <!-- Team meeting representation -->
+  <rect x="50" y="100" width="500" height="200" fill="#d0d0d0" rx="10" />
+  
+  <!-- People silhouettes -->
+  <circle cx="150" cy="150" r="30" fill="#b0b0b0" />
+  <circle cx="250" cy="150" r="30" fill="#b0b0b0" />
+  <circle cx="350" cy="150" r="30" fill="#b0b0b0" />
+  <circle cx="450" cy="150" r="30" fill="#b0b0b0" />
+  
+  <!-- Table representation -->
+  <rect x="130" y="200" width="340" height="60" fill="#a0a0a0" rx="5" />
+  
+  <!-- Experience badge -->
+  <rect x="40" y="320" width="120" height="60" fill="#ff6900" rx="5" />
+  <text x="100" y="345" fill="#ffffff" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">8+</text>
+  <text x="100" y="365" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle">AÑOS DE EXPERIENCIA</text>
+  
+  <!-- Placeholder text -->
+  <text x="300" y="380" fill="#8a8a8a" font-family="Arial" font-size="14" text-anchor="middle">[Imagen del Equipo Blaa Group]</text>
+</svg>
