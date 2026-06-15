@@ -41,4 +41,4 @@ jobs:
           rsync -az --delete \
             -e "ssh -p ${{ secrets.SSH_PORT }}" \
             ./dist/blaa-ng/browser/ \
-            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/public_html/"
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/domains/blaagroup.com/public_html/"
