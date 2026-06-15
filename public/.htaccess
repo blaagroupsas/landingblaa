@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Serve existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Fallback to index.html for Angular routing
+RewriteRule . /index.html [L]
