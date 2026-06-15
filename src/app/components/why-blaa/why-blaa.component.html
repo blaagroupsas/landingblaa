@@ -1,0 +1,24 @@
+<section id="por-que-blaa" class="why-blaa" aria-labelledby="why-h">
+  <div class="wrap">
+
+    <header class="why-blaa__header" appReveal>
+      <span class="label label--light">¿Por qué Blaa?</span>
+      <h2 id="why-h">¿Por qué elegir<br>Blaa Group?</h2>
+    </header>
+
+    <div class="why-blaa__stats" role="list">
+      @for (item of differentials; track item.number; let i = $index) {
+        <article class="stat-block" role="listitem" appReveal [appRevealDelay]="i + 1">
+          <div class="stat-block__num">{{ item.number }}</div>
+          <h3 class="stat-block__title">{{ item.title }}</h3>
+          <p class="stat-block__desc">{{ item.description }}</p>
+        </article>
+      }
+    </div>
+
+    <div class="why-blaa__action" appReveal>
+      <a href="#contacto" class="btn btn--primary">Hablar con nosotros</a>
+    </div>
+
+  </div>
+</section>

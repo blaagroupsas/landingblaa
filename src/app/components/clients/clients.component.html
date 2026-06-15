@@ -1,0 +1,30 @@
+<section id="clientes" class="clients" aria-labelledby="clients-h">
+  <div class="wrap">
+
+    <header class="clients__header" appReveal>
+      <span class="label label--muted">Clientes</span>
+      <h2 id="clients-h">Marcas que ya confían<br>en nosotros.</h2>
+    </header>
+
+    <div class="clients__grid" role="list" aria-label="Clientes de Blaa Group">
+      @for (client of clients; track client.id; let i = $index) {
+        <div class="client-logo" role="listitem" appReveal [appRevealDelay]="(i % 3) + 1">
+          <img
+            [src]="client.logoUrl"
+            [alt]="client.name"
+            width="160"
+            height="64"
+            class="client-logo__img"
+            loading="lazy"
+          />
+        </div>
+      }
+    </div>
+
+    <p class="clients__note" appReveal>
+      Trabajamos con pymes de sectores como salud y estética, servicios profesionales,
+      restaurantes y educación en Colombia.
+    </p>
+
+  </div>
+</section>

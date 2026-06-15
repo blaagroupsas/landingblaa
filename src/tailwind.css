@@ -1,0 +1,29 @@
+/* Tailwind v4 — CSS-first configuration
+ * Tokens are mapped from _tokens.scss CSS custom properties.
+ * @theme inline means Tailwind uses var() references directly
+ * (no new --tw-* custom properties generated). */
+@import "tailwindcss";
+
+@theme inline {
+  /* Color tokens */
+  --color-accent:     var(--accent);
+  --color-ink:        var(--ink);
+  --color-ink-60:     var(--ink-60);
+  --color-ink-35:     var(--ink-35);
+  --color-paper:      var(--paper);
+  --color-surface:    var(--surface);
+  --color-dark:       var(--dark);
+  --color-dark-mid:   var(--dark-mid);
+  --color-dark-card:  var(--dark-card);
+  --color-dark-line:  var(--dark-line);
+  --color-border:     var(--border);
+
+  /* Font families */
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-display: 'Manrope', system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-sm: var(--r);
+  --radius-md: var(--r-lg);
+  --radius-lg: var(--r-xl);
+}

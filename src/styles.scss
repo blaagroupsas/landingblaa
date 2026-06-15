@@ -1,0 +1,17 @@
+// ─────────────────────────────────────────────
+// BLAA GROUP — Global Styles
+// Source: Manual de Marca 2025 v1.0
+// Typography: Manrope (headings) + Inter (body)
+// ─────────────────────────────────────────────
+
+// 1. Design tokens
+@import 'styles/tokens';
+
+// 2. Base reset + typography
+@import 'styles/base';
+
+// 3. Animations
+@import 'styles/animations';
+
+// 4. PrimeNG component overrides — Blaa brand palette
+@import 'styles/primeng';

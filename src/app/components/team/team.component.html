@@ -1,0 +1,59 @@
+<section id="equipo" class="team" aria-labelledby="team-h">
+  <div class="wrap">
+
+    <header class="team__header" appReveal>
+      <span class="label label--light">Equipo</span>
+      <h2 id="team-h">Las personas detrás<br>del resultado.</h2>
+      <p class="team__sub">
+        Trabajas directamente con los expertos que ejecutan. Sin capas de intermediación,
+        sin cuentas y sin juniors aprendiendo con tu inversión.
+      </p>
+    </header>
+
+    <div class="team__grid" role="list">
+      @for (member of members; track member.id; let i = $index) {
+        <article class="member-card" role="listitem" appReveal [appRevealDelay]="i + 1">
+
+          <div class="member-card__photo" aria-hidden="true">
+            @if (member.photoUrl) {
+              <img
+                [src]="member.photoUrl"
+                [alt]="member.name"
+                width="96"
+                height="96"
+                class="member-card__img"
+                loading="lazy"
+              />
+            } @else {
+              <span class="member-card__initials">{{ initials(member.name) }}</span>
+            }
+          </div>
+
+          <div class="member-card__body">
+            <h3 class="member-card__name">{{ member.name }}</h3>
+            <span class="member-card__role">{{ member.role }}</span>
+            <p class="member-card__bio">{{ member.bio }}</p>
+
+            @if (member.linkedin) {
+              <a
+                [href]="member.linkedin"
+                class="member-card__link"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="'LinkedIn de ' + member.name"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+                LinkedIn
+              </a>
+            }
+          </div>
+
+        </article>
+      }
+    </div>
+
+  </div>
+</section>

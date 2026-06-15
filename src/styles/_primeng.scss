@@ -1,0 +1,215 @@
+// ─────────────────────────────────────────────
+// PRIMENG BLAA THEME — CSS Custom Property Override
+// Tokens follow the --p-{component}-{path} naming
+// convention from @primeuix/styled.
+// ─────────────────────────────────────────────
+@import 'tokens';
+
+// ── Button ───────────────────────────────────
+
+:root {
+  // Primary button (Blaa Orange)
+  --p-button-primary-background:          var(--accent);
+  --p-button-primary-border-color:        var(--accent);
+  --p-button-primary-color:              var(--on-accent);
+  --p-button-primary-hover-background:    var(--accent-h);
+  --p-button-primary-hover-border-color:  var(--accent-h);
+  --p-button-primary-hover-color:        var(--on-accent);
+  --p-button-primary-active-background:   #c2410c;
+  --p-button-primary-active-border-color: #c2410c;
+  --p-button-primary-active-color:       var(--on-accent);
+  --p-button-primary-focus-ring-color:    rgba(255, 105, 0, 0.4);
+  --p-button-primary-focus-ring-shadow:   none;
+
+  // Secondary button (outline-light — dark bg context)
+  --p-button-secondary-background:          transparent;
+  --p-button-secondary-border-color:        #3D4754;
+  --p-button-secondary-color:              var(--paper);
+  --p-button-secondary-hover-background:    #1C2533;
+  --p-button-secondary-hover-border-color:  #546070;
+  --p-button-secondary-hover-color:        var(--paper);
+  --p-button-secondary-active-background:   #1C2533;
+  --p-button-secondary-active-border-color: #546070;
+  --p-button-secondary-active-color:       var(--paper);
+  --p-button-secondary-focus-ring-color:    rgba(255, 255, 255, 0.3);
+  --p-button-secondary-focus-ring-shadow:   none;
+
+  // Outlined primary
+  --p-button-outlined-primary-border-color:       var(--accent);
+  --p-button-outlined-primary-color:             var(--accent);
+  --p-button-outlined-primary-hover-background:  rgba(255, 105, 0, 0.06);
+  --p-button-outlined-primary-active-background: rgba(255, 105, 0, 0.12);
+
+  // Sizing & shape (matches .btn from _base.scss)
+  --p-button-padding-y:         0.875rem;
+  --p-button-padding-x:         1.75rem;
+  --p-button-border-radius:     var(--r);
+  --p-button-label-font-weight: 700;
+  --p-button-gap:               0.5rem;
+
+  // Focus ring
+  --p-button-focus-ring-width:  3px;
+  --p-button-focus-ring-style:  solid;
+  --p-button-focus-ring-offset: 3px;
+
+  // Transition
+  --p-button-transition-duration: 200ms;
+
+  // ── InputText ────────────────────────────────
+
+  // Default (light mode inputs — not used in this project yet)
+  --p-inputtext-background:       var(--gray-50);
+  --p-inputtext-border-color:     var(--gray-200);
+  --p-inputtext-color:           var(--ink);
+  --p-inputtext-placeholder-color: var(--ink-35);
+  --p-inputtext-border-radius:    var(--r);
+  --p-inputtext-padding-y:        0.75rem;
+  --p-inputtext-padding-x:        1rem;
+  --p-inputtext-hover-border-color:       var(--ink-60);
+  --p-inputtext-focus-border-color:       rgba(255, 105, 0, 0.6);
+  --p-inputtext-focus-ring-width:         3px;
+  --p-inputtext-focus-ring-style:         solid;
+  --p-inputtext-focus-ring-color:         rgba(255, 105, 0, 0.12);
+  --p-inputtext-focus-ring-offset:        0;
+  --p-inputtext-focus-ring-shadow:        0 0 0 3px rgba(255, 105, 0, 0.12);
+  --p-inputtext-shadow:                   none;
+  --p-inputtext-transition-duration:      150ms;
+
+  // ── Textarea ─────────────────────────────────
+
+  --p-textarea-background:       var(--gray-50);
+  --p-textarea-border-color:     var(--gray-200);
+  --p-textarea-color:           var(--ink);
+  --p-textarea-placeholder-color: var(--ink-35);
+  --p-textarea-border-radius:    var(--r);
+  --p-textarea-padding-y:        0.75rem;
+  --p-textarea-padding-x:        1rem;
+  --p-textarea-hover-border-color:       var(--ink-60);
+  --p-textarea-focus-border-color:       rgba(255, 105, 0, 0.6);
+  --p-textarea-focus-ring-width:         3px;
+  --p-textarea-focus-ring-style:         solid;
+  --p-textarea-focus-ring-color:         rgba(255, 105, 0, 0.12);
+  --p-textarea-focus-ring-offset:        0;
+  --p-textarea-focus-ring-shadow:        0 0 0 3px rgba(255, 105, 0, 0.12);
+  --p-textarea-shadow:                   none;
+  --p-textarea-transition-duration:      150ms;
+
+  // ── Select ───────────────────────────────────
+
+  --p-select-background:       var(--gray-50);
+  --p-select-border-color:     var(--gray-200);
+  --p-select-color:           var(--ink);
+  --p-select-placeholder-color: var(--ink-35);
+  --p-select-border-radius:    var(--r);
+  --p-select-padding-y:        0.75rem;
+  --p-select-padding-x:        1rem;
+  --p-select-dropdown-color:   var(--ink-60);
+  --p-select-hover-border-color:       var(--ink-60);
+  --p-select-focus-border-color:       rgba(255, 105, 0, 0.6);
+  --p-select-focus-ring-width:         3px;
+  --p-select-focus-ring-style:         solid;
+  --p-select-focus-ring-color:         rgba(255, 105, 0, 0.12);
+  --p-select-focus-ring-offset:        0;
+  --p-select-focus-ring-shadow:        0 0 0 3px rgba(255, 105, 0, 0.12);
+  --p-select-shadow:                   none;
+  --p-select-transition-duration:      150ms;
+
+  // Select overlay (dropdown panel — appended to body, must be global)
+  --p-select-overlay-background:   var(--dark-card);
+  --p-select-overlay-border-color: var(--dark-line);
+  --p-select-overlay-color:        var(--paper);
+  --p-select-overlay-border-radius: var(--r);
+  --p-select-overlay-shadow:        0 8px 24px rgba(0, 0, 0, 0.3);
+  --p-select-option-color:          var(--paper);
+  --p-select-option-focus-background:          rgba(255, 255, 255, 0.06);
+  --p-select-option-focus-color:               var(--paper);
+  --p-select-option-selected-background:       rgba(255, 105, 0, 0.2);
+  --p-select-option-selected-color:            var(--paper);
+  --p-select-option-selected-focus-background: rgba(255, 105, 0, 0.3);
+  --p-select-option-selected-focus-color:      var(--paper);
+  --p-select-list-padding:   0.375rem;
+  --p-select-option-padding: 0.625rem 1rem;
+  --p-select-option-border-radius: var(--r);
+
+  // ── Dialog ───────────────────────────────────
+
+  --p-dialog-background:    var(--paper);
+  --p-dialog-border-color:  var(--border);
+  --p-dialog-color:         var(--ink);
+  --p-dialog-border-radius: var(--r-xl);
+  --p-dialog-shadow:        0 20px 60px rgba(0, 0, 0, 0.15);
+  --p-dialog-content-padding:   0;
+  --p-dialog-header-padding:    0;
+  --p-dialog-footer-padding:    0;
+  --p-dialog-footer-gap:        0;
+  --p-dialog-header-gap:        0;
+  --p-dialog-title-font-weight: 700;
+  --p-dialog-title-font-size:   1.25rem;
+}
+
+// ── Dark context overrides (contact form) ─────
+
+.contact__form-wrap {
+  --p-inputtext-background:        var(--dark-mid);
+  --p-inputtext-border-color:      var(--dark-line);
+  --p-inputtext-color:            var(--paper);
+  --p-inputtext-placeholder-color: #4B5563;
+  --p-inputtext-hover-border-color: rgba(255, 105, 0, 0.4);
+
+  --p-textarea-background:        var(--dark-mid);
+  --p-textarea-border-color:      var(--dark-line);
+  --p-textarea-color:            var(--paper);
+  --p-textarea-placeholder-color: #4B5563;
+  --p-textarea-hover-border-color: rgba(255, 105, 0, 0.4);
+
+  --p-select-background:        var(--dark-mid);
+  --p-select-border-color:      var(--dark-line);
+  --p-select-color:            var(--paper);
+  --p-select-placeholder-color: #4B5563;
+  --p-select-dropdown-color:    #9BA5B0;
+  --p-select-hover-border-color: rgba(255, 105, 0, 0.4);
+}
+
+// ── Button font override ─────────────────────
+// PrimeNG injects styles at runtime; these need specificity
+// or !important to win over runtime-injected .p-button styles.
+
+body .p-button {
+  font-family: var(--font-head);
+  font-size: var(--t-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+// ── PrimeNG component structural fixes ───────
+
+.p-inputtext,
+.p-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+}
+
+.p-select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+}
+
+// Remove PrimeNG overlay z-index conflicts
+.p-select-overlay {
+  font-family: var(--font-body);
+}
+
+// Dialog mask opacity
+.p-dialog-mask {
+  background: rgba(14, 17, 22, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+// Service dialog
+.blaa-dialog {
+  border-radius: var(--r-xl) !important;
+  border: none !important;
+  overflow: hidden;
+}

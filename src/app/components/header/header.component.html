@@ -1,0 +1,44 @@
+<header>
+  <nav class="nav" [class.nav--stuck]="isStuck()" [class.nav--open]="isOpen()" aria-label="Navegación principal">
+    <a href="/" class="nav__logo" aria-label="Blaa Group, ir al inicio" (click)="closeMenu()">
+      <img src="images/logob.webp" alt="Blaa Group" width="120" height="34">
+    </a>
+
+    <ul class="nav__links" role="list">
+      @for (link of navLinks; track link.href) {
+      <li>
+        <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+      </li>
+      }
+    </ul>
+
+    <a href="#contacto" class="btn btn--primary nav__cta" (click)="closeMenu()">
+      Habla con nosotros
+    </a>
+
+    <button class="nav__burger" [attr.aria-expanded]="isOpen()" aria-label="Abrir menú" aria-controls="nav-mobile"
+      (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  @if (isOpen()) {
+  <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Menú de navegación">
+    <ul role="list">
+      @for (link of navLinks; track link.href) {
+      <li>
+        <a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+      </li>
+      }
+      <li>
+        <a href="#contacto" class="btn btn--primary btn--full" (click)="closeMenu()">
+          Habla con nosotros
+        </a>
+      </li>
+    </ul>
+  </div>
+  }
+</header>

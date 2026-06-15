@@ -1,0 +1,31 @@
+<section id="nosotros" class="about" aria-labelledby="about-h">
+  <div class="wrap">
+
+    <div class="about__intro" appReveal>
+      <span class="label label--muted">Nosotros</span>
+      <h2 id="about-h">Somos especialistas en transformación digital.</h2>
+      <div class="about__copy">
+        <p>
+          En <strong>Blaa Group</strong> nos dedicamos a convertir ideas en estrategias
+          digitales efectivas que generan resultados medibles y tangibles para nuestros clientes.
+        </p>
+        <p>
+          Desde 2019, hemos ayudado a nuestros clientes a mejorar su presencia online,
+          aumentar su visibilidad y generar más ventas a través de estrategias digitales
+          personalizadas.
+        </p>
+      </div>
+    </div>
+
+    <div class="about__values" aria-label="Valores de Blaa Group">
+      @for (value of values; track value.title; let i = $index) {
+        <article class="value-card" appReveal [appRevealDelay]="i + 1">
+          <div class="value-card__num" aria-hidden="true">0{{ i + 1 }}</div>
+          <h3 class="value-card__title">{{ value.title }}</h3>
+          <p class="value-card__desc">{{ value.description }}</p>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>

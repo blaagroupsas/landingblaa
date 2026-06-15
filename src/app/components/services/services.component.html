@@ -1,0 +1,143 @@
+<section id="servicios" class="services" aria-labelledby="services-h">
+  <div class="wrap">
+
+    <header class="services__header" appReveal>
+      <span class="label label--light">Servicios</span>
+      <h2 id="services-h">Creamos tu mundo digital<br>desde donde estés hoy.</h2>
+      <p class="services__sub">
+        No importa si partís de cero o si tenés perfiles sin actividad.
+        Construimos la presencia que tu marca necesita para ser encontrada
+        y recordada en las plataformas correctas.
+      </p>
+    </header>
+
+    <div class="services__list" role="list">
+      @for (service of services; track service.id; let i = $index) {
+        <article
+          class="svc-row"
+          [class.svc-row--featured]="service.featured"
+          role="listitem"
+          appReveal
+          [appRevealDelay]="i + 1"
+        >
+          <div class="svc-row__top">
+            <span class="svc-row__num">{{ i < 9 ? '0' : '' }}{{ i + 1 }}</span>
+            <h3 class="svc-row__title">{{ service.title }}</h3>
+            @if (service.featured) {
+              <span class="svc-row__badge">Por aquí se empieza</span>
+            }
+            <div class="svc-row__arrow" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="svc-row__body">
+            <div class="svc-row__body-inner">
+              <p class="svc-row__desc">{{ service.description }}</p>
+              <button
+                class="svc-row__cta"
+                (click)="openModal(service)"
+                [attr.aria-label]="'Ver detalle: ' + service.title"
+              >
+                Ver detalle
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <div class="services__cta" appReveal>
+      <p>¿No sabés por dónde empezar? Te lo decimos en una llamada.</p>
+      <a href="#contacto" class="btn btn--primary">Hablar con nosotros</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Service Detail Dialog ── -->
+<p-dialog
+  [visible]="dialogVisible()"
+  (visibleChange)="onDialogVisibleChange($event)"
+  [modal]="true"
+  [dismissableMask]="true"
+  [closable]="false"
+  [showHeader]="false"
+  [draggable]="false"
+  [resizable]="false"
+  [style]="{ width: '560px', 'max-width': '95vw' }"
+  [contentStyle]="{ padding: '0', 'max-height': '85vh', 'overflow-y': 'auto', 'border-radius': 'var(--r-xl)' }"
+  styleClass="blaa-dialog"
+  appendTo="body"
+>
+  @if (activeService()) {
+    <div class="modal">
+
+      <button
+        class="modal__close"
+        (click)="closeModal()"
+        aria-label="Cerrar"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="modal__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path [attr.d]="activeService()!.icon" />
+        </svg>
+      </div>
+
+      <p class="modal__label">{{ activeService()!.title }}</p>
+      <h2 class="modal__headline">{{ activeService()!.modal.headline }}</h2>
+      <p class="modal__body">{{ activeService()!.modal.body }}</p>
+
+      <div class="modal__includes">
+        <h3 class="modal__section-title">¿Qué incluye?</h3>
+        <ul>
+          @for (item of activeService()!.modal.includes; track item) {
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {{ item }}
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="modal__meta">
+        <div class="modal__meta-item">
+          <span class="modal__meta-label">Ideal para</span>
+          <p>{{ activeService()!.modal.idealFor }}</p>
+        </div>
+        <div class="modal__meta-item">
+          <span class="modal__meta-label">Tiempos</span>
+          <p>{{ activeService()!.modal.timeline }}</p>
+        </div>
+      </div>
+
+      <a href="#contacto" class="btn btn--primary" (click)="closeModal()">
+        Quiero este servicio
+      </a>
+
+    </div>
+  }
+</p-dialog>
