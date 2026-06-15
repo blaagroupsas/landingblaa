@@ -1,10 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RevealDirective } from '../../shared/reveal.directive';
-
-interface BrandValue {
-  title: string;
-  description: string;
-}
+import { BrandValue } from '../../models';
 
 @Component({
   selector: 'app-about',

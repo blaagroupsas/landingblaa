@@ -124,6 +124,12 @@
               ></textarea>
             </div>
 
+            @if (submitError()) {
+              <p class="form-error" role="alert">
+                Hubo un problema al enviar. Intenta de nuevo o escríbenos directamente.
+              </p>
+            }
+
             <p-button
               type="submit"
               label="Hablar por WhatsApp"
@@ -145,8 +151,8 @@
                 <polyline points="20 6 9 17 4 12"/>
               </svg>
             </div>
-            <h3>¡Listo! Nos vemos por WhatsApp.</h3>
-            <p>Si la ventana no abrió automáticamente, escríbenos directamente.</p>
+            <h3>¡Mensaje recibido!</h3>
+            <p>Nos pondremos en contacto contigo muy pronto.</p>
             <p-button
               label="Enviar otro mensaje"
               severity="secondary"
