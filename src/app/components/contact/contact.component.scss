@@ -1,4 +1,4 @@
-@import '../../../styles/tokens';
+@use '../../../styles/tokens' as *;
 
 .contact {
   padding: var(--py) 0;

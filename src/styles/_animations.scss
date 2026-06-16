@@ -23,6 +23,23 @@
 [data-reveal-delay='4'] { transition-delay: 0.4s; }
 [data-reveal-delay='5'] { transition-delay: 0.5s; }
 
+// Logo marquee
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+// Canvas float (about visual)
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
 // Pulse dot (hero badge)
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }

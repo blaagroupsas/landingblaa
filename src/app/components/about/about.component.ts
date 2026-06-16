@@ -13,16 +13,16 @@ import { BrandValue } from '../../models';
 export class AboutComponent {
   values: BrandValue[] = [
     {
-      title: 'Excelencia',
-      description: 'Buscamos la máxima calidad en cada proyecto que emprendemos.',
+      title: 'Estrategia antes que táctica',
+      description: 'Antes de publicar un solo peso en pauta, entendemos tu negocio, tu mercado y a quién le hablas.',
     },
     {
-      title: 'Innovación',
-      description: 'Aplicamos las últimas tendencias y tecnologías del marketing digital.',
+      title: 'Medición constante',
+      description: 'Cada decisión tiene un número detrás. Reportamos lo que importa, no lo que se ve bien en pantalla.',
     },
     {
-      title: 'Resultados',
-      description: 'Nos enfocamos en métricas y objetivos claros que impactan tu negocio.',
+      title: 'Foco en el mercado local',
+      description: 'Conocemos el mercado colombiano: sus ritmos, sus plataformas y cómo compra el cliente hoy.',
     },
   ];
 }

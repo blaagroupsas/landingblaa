@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────
 // BASE RESET + TYPOGRAPHY
 // ─────────────────────────────────────────────
-@import 'tokens';
+@use 'tokens' as *;
 
 *, *::before, *::after {
   margin: 0;
