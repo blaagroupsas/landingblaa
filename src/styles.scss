@@ -5,13 +5,13 @@
 // ─────────────────────────────────────────────
 
 // 1. Design tokens
-@import 'styles/tokens';
+@use 'styles/tokens';
 
 // 2. Base reset + typography
-@import 'styles/base';
+@use 'styles/base';
 
 // 3. Animations
-@import 'styles/animations';
+@use 'styles/animations';
 
 // 4. PrimeNG component overrides — Blaa brand palette
-@import 'styles/primeng';
+@use 'styles/primeng';

@@ -13,4 +13,10 @@ import { Client } from '../../shared/models';
 })
 export class ClientsComponent {
   readonly clients: Client[] = CLIENTS;
+
+  readonly marqueeTrack1: Client[] = [...CLIENTS, ...CLIENTS];
+  readonly marqueeTrack2: Client[] = [
+    ...CLIENTS.slice(6), ...CLIENTS.slice(0, 6),
+    ...CLIENTS.slice(6), ...CLIENTS.slice(0, 6),
+  ];
 }

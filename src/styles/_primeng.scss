@@ -3,7 +3,7 @@
 // Tokens follow the --p-{component}-{path} naming
 // convention from @primeuix/styled.
 // ─────────────────────────────────────────────
-@import 'tokens';
+@use 'tokens' as *;
 
 // ── Button ───────────────────────────────────
 

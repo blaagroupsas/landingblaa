@@ -10,13 +10,12 @@ import { RevealDirective } from '../../shared/reveal.directive';
 import { SERVICES } from '../../shared/data/services.data';
 import { Service } from '../../shared/models';
 import { Dialog } from 'primeng/dialog';
-import { Button } from 'primeng/button';
 
 @Component({
   selector: 'app-services',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RevealDirective, Dialog, Button],
+  imports: [RevealDirective, Dialog],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss',
 })
