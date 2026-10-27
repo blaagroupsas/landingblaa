@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Kit de marca local: no forma parte del sitio
+/blaa-group-logo-kit/

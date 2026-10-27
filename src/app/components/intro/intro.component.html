@@ -1,0 +1,32 @@
+@if (visible()) {
+  <div
+    class="intro"
+    [class.intro--skip]="skipping()"
+    role="region"
+    aria-label="Bienvenida a Blaa Group"
+    (click)="skip()"
+    (document:keydown)="skip()"
+  >
+    <div class="intro__inner">
+      <!-- Logo animado: la clase play va fija en el template, así la animación corre sin JS -->
+      <div class="blaa-logo play" aria-hidden="true">
+        <div class="blaa-wordmark">
+          <span class="blaa-chars">
+            <span class="blaa-ch">B</span><span class="blaa-ch">l</span><span class="blaa-ch">a</span><span class="blaa-ch">a</span>
+          </span>
+          <span class="blaa-excl">!</span>
+        </div>
+        <span class="blaa-group">Group</span>
+      </div>
+      <span class="sr-only">Blaa Group</span>
+
+      <p class="intro__welcome">Bienvenido. Marketing digital para pymes colombianas.</p>
+    </div>
+
+    <button type="button" class="intro__skip" (click)="$event.stopPropagation(); skip()">
+      Continuar
+    </button>
+
+    <span class="intro__bar" aria-hidden="true"></span>
+  </div>
+}
