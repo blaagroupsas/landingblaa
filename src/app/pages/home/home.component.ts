@@ -5,6 +5,7 @@ import { ServicesComponent } from '../../components/services/services.component'
 import { WhyBlaaComponent } from '../../components/why-blaa/why-blaa.component';
 import { ClientsComponent } from '../../components/clients/clients.component';
 import { ContactComponent } from '../../components/contact/contact.component';
+import { IntroComponent } from '../../components/intro/intro.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { ContactComponent } from '../../components/contact/contact.component';
     WhyBlaaComponent,
     ClientsComponent,
     ContactComponent,
+    IntroComponent,
   ],
   styles: [`
     .wa-float {
@@ -41,6 +43,7 @@ import { ContactComponent } from '../../components/contact/contact.component';
     }
   `],
   template: `
+    <app-intro />
     <app-hero />
     <app-about />
     <app-services />

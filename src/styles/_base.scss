@@ -25,22 +25,37 @@ body {
   overflow-x: hidden;
 }
 
-// ── Headings — escala brand manual ──
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-head);
+// ── Headings ──
+// Títulos grandes en Comfortaa (logo). Títulos menores en Manrope.
+h1, h2 {
+  font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.1;
+  text-wrap: balance;
 }
 
-h1 { font-size: var(--t-hero);   letter-spacing: -0.015em; }
-h2 { font-size: var(--t-h2);     letter-spacing: -0.01em;  font-weight: 600; }
-h3 { font-size: var(--t-h3);     letter-spacing: -0.005em; font-weight: 600; }
-h4 { font-size: 1.125rem;        font-weight: 600; }
+h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  text-wrap: balance;
+}
 
-p  { max-width: 68ch; line-height: 1.65; }
+h1 { font-size: var(--t-hero); line-height: 1.04; letter-spacing: -0.025em; }
+h2 { font-size: var(--t-h2);   line-height: 1.1;  letter-spacing: -0.02em; }
+h3 { font-size: var(--t-h3);   line-height: 1.3;  letter-spacing: -0.01em; font-weight: 700; }
+h4 { font-size: 1.0625rem;     line-height: 1.35; font-weight: 700; }
+
+p  { max-width: 64ch; line-height: 1.7; text-wrap: pretty; }
 a  { color: inherit; text-decoration: none; }
+strong { font-weight: 700; }
 
 img { max-width: 100%; display: block; }
+
+// Foco visible: requisito de accesibilidad, no decoración
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 // ── Utility ──
 .sr-only {
@@ -55,53 +70,64 @@ img { max-width: 100%; display: block; }
   padding: 0 var(--px);
 }
 
-// ── Label / tag component ──
+// ── Label: etiqueta de sección (sentence case, no mayúsculas gritonas) ──
 .label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
   font-family: var(--font-head);
   font-size: var(--t-label);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+
+  // Pequeña marca naranja antes del texto: ancla visual de cada sección
+  &::before {
+    content: '';
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+  }
 }
 
-.label--muted  { color: var(--ink-35); }
-.label--accent { color: var(--accent); }  // Solo usar en fondos oscuros (contraste ok)
-.label--light  { color: rgba(255, 255, 255, 0.55); }
+.label--muted  { color: var(--ink-60); }
+.label--accent { color: var(--accent); }
+.label--light  { color: var(--on-dark-70); }
 
 // ── Buttons ──
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
+  padding: 0.9375rem 1.75rem;
   font-family: var(--font-head);
-  font-size: var(--t-label);
+  font-size: 0.9375rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  line-height: 1;
   border-radius: var(--r);
-  border: 2px solid transparent;
+  border: 1.5px solid transparent;
   cursor: pointer;
   white-space: nowrap;
   transition:
-    background 200ms var(--ease),
-    color 200ms var(--ease),
-    border-color 200ms var(--ease);
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
 
-  &:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
-  }
-
-  &:disabled { opacity: 0.55; cursor: default; }
+  &:hover  { transform: translateY(-1px); }
+  &:active { transform: translateY(1px) scale(0.985); }
+  &:disabled { opacity: 0.55; cursor: default; transform: none; }
 }
 
 .btn--primary {
   background: var(--accent);
   color: var(--on-accent);
   border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
 
   &:hover {
     background: var(--accent-h);
@@ -122,25 +148,20 @@ img { max-width: 100%; display: block; }
 
 .btn--outline-light {
   background: transparent;
-  color: var(--paper);
-  border-color: #3D4754;
+  color: var(--on-dark);
+  border-color: rgba(250, 247, 242, 0.28);
 
   &:hover {
-    background: #1C2533;
-    border-color: #546070;
+    background: rgba(250, 247, 242, 0.06);
+    border-color: rgba(250, 247, 242, 0.55);
   }
 }
 
-.btn--full { width: 100%; justify-content: center; }
+.btn--full { width: 100%; }
 
-// ── Dividers ──
-.section-divider {
-  height: 1px;
-  background: var(--border);
-}
-
-// ── Accessibility: reduce motion ──
+// ── Accesibilidad: reducir movimiento ──
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
